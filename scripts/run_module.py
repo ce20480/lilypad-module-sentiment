@@ -50,6 +50,9 @@ def run_module():
 
     if args.input is None:
         args.input = input("Enter your input: ").strip()
+        if not args.input:
+            # Default input value, /app is key for working directory(don't know why ahah)
+            args.input = "/app/models/processed/x_test.csv"
 
     local = args.local
     demonet = args.demonet

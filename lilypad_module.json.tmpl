@@ -8,7 +8,7 @@
         "WorkingDirectory": "/app",
         "Entrypoint": ["python", "/src/run_inference.py"],
         "EnvironmentVariables": ["INPUT={{ js .input }}"],
-        "Image": "dockerhub_username/image:tag"
+        "Image": "aviini/lilypad-module-sentiment:latest"
       },
       "Engine": "Docker",
       "Network": { "Type": "None" },
