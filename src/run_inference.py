@@ -19,6 +19,8 @@ def run_job(input_file, model):
     """Combine input file with working directory to get the full path"""
     # input_file = os.path.join(os.getcwd(), input_file)
     try:
+        if not os.path.exists(input_file):
+            raise FileNotFoundError(f"Input file: {input_file} not found")
         # Load and preprocess input data
         if input_file.endswith(".csv"):
             # Read only the feature columns (assuming labels are in the last column)
