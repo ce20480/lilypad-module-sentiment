@@ -7,6 +7,9 @@ from config.constants import DOCKER_REPO, GITHUB_REPO, GITHUB_TAG
 
 
 def run_module():
+    print(os.getcwd())
+    # get the current path
+    print(os.path.abspath("./"))
     DEMONET_PRIVATE_KEY = os.environ.get("DEMONET_PRIVATE_KEY")
     WEB3_PRIVATE_KEY = os.environ.get("WEB3_PRIVATE_KEY")
 
