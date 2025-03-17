@@ -7,7 +7,10 @@
       "Docker": {
         "WorkingDirectory": "/app",
         "Entrypoint": ["python", "/app/src/run_inference.py"],
-        "EnvironmentVariables": ["INPUT={{ js .input }}"],
+        "EnvironmentVariables": [
+        # "INPUT={{ js .input }}"
+        {{if .input }}"INPUT={{ js .input }}"{{ else }}"INPUT=/app/models/processed/x_test.csv"{{end}},
+        ],
         "Image": "aviini/lilypad-module-sentiment:latest"
       },
       "Engine": "Docker",
