@@ -73,7 +73,7 @@ def run_job(input_file, model):
 def main():
     print("Starting inference...")
 
-    input = os.environ.get("INPUT", "Default input value")
+    input = os.environ.get("INPUT", "/app/models/processed/x_test.csv")
 
     # `/app` directory aligns with the `WORKDIR` specified in the `Dockerfile`
     model_path = "/app/models/asl_model_20250310_184213.pt"
