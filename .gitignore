@@ -19,7 +19,7 @@ dist/
 *.egg-info/
 
 # Models directories
-models/
+# models/
 
 # Output directories
 outputs/
