@@ -12,4 +12,4 @@ GITHUB_REPO = "github.com/ce20480/lilypad-module-sentiment"
 
 # TODO: Specify the GitHub tag, branch, or commit hash.
 # Example: "main" or "c3ed392c11060337cae010862b1af160cd805e67"
-GITHUB_TAG = "13a33dd45b573839220aa5942a172ddc4eec1354"
+GITHUB_TAG = "a1ae44695bba118062e06736cb392d51637ea981"
