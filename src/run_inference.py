@@ -17,6 +17,7 @@ def run_job(input_file, model):
     Run the job
     """
     """Combine input file with working directory to get the full path"""
+    input_file = os.path.join(os.getcwd(), input_file)
     try:
         # Load and preprocess input data
         if input_file.endswith(".csv"):
