@@ -21,17 +21,21 @@ def run_job(input_file, model):
     try:
         if not os.path.exists(input_file):
             raise FileNotFoundError(f"Input file: {input_file} not found")
+        df = pd.read_csv(input_file)
+        # Remove any non-numeric columns (like labels) if present
+        numeric_cols = df.select_dtypes(include=[np.number]).columns
+        input_data = df[numeric_cols].values
         # Load and preprocess input data
-        if input_file.endswith(".csv"):
-            # Read only the feature columns (assuming labels are in the last column)
-            df = pd.read_csv(input_file)
-            # Remove any non-numeric columns (like labels) if present
-            numeric_cols = df.select_dtypes(include=[np.number]).columns
-            input_data = df[numeric_cols].values
-        elif input_file.endswith(".npy"):
-            input_data = np.load(input_file)
-        else:
-            raise ValueError(f"Input file: {input_file} must be .csv or .npy")
+        # if input_file.endswith(".csv"):
+        #     # Read only the feature columns (assuming labels are in the last column)
+        #     df = pd.read_csv(input_file)
+        #     # Remove any non-numeric columns (like labels) if present
+        #     numeric_cols = df.select_dtypes(include=[np.number]).columns
+        #     input_data = df[numeric_cols].values
+        # elif input_file.endswith(".npy"):
+        #     input_data = np.load(input_file)
+        # else:
+        #     raise ValueError(f"Input file: {input_file} must be .csv or .npy")
 
         # Ensure input data is float32
         input_data = input_data.astype(np.float32)
