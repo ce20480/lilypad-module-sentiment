@@ -29,7 +29,7 @@ def run_job(input_file, model):
         elif input_file.endswith(".npy"):
             input_data = np.load(input_file)
         else:
-            raise ValueError("Input file must be .csv or .npy")
+            raise ValueError(f"Input file: {input_file} must be .csv or .npy")
 
         # Ensure input data is float32
         input_data = input_data.astype(np.float32)
