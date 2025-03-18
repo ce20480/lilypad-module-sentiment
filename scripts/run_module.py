@@ -91,8 +91,8 @@ def run_module():
             f"{GITHUB_REPO}:{GITHUB_TAG}",
             "--web3-private-key",
             WEB3_PRIVATE_KEY,
-            "-i",
-            f'input="{args.input}"',
+            # "-i",
+            # f'input="{args.input}"',
         ]
 
     try:
